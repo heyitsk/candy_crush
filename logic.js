@@ -12,16 +12,17 @@ function gameStart(){
     for (i=0; i<rows; i++){
         for (j=0; j<colums; j++){
             let randomSrc = "images/" + images[Math.floor(Math.random() * 6)] + ".png"
-            // let srcString = randomSrc.toString();
             let randomImage= document.createElement("img")
-            randomImage.height = 50;
-            randomImage.width = 50;
+            randomImage.setAttribute("height",50)
+            randomImage.setAttribute("width",50)
             randomImage.setAttribute("src",randomSrc)
+            randomImage.setAttribute("id", i+"-"+j)
             board.append(randomImage)
             
 
         }
     }
+    
 }
 
 

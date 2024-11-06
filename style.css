@@ -1,7 +1,8 @@
+
 html, body {
     height: 100%;
     margin: 0;
-    box-sizing: border-box;
+    
   }
 
 body{
@@ -20,4 +21,7 @@ body{
     height: 450px;
     width: 450px;
     border: 4px solid black;
+    background-color: rgba(94, 128, 167,0.8);
+    display: flex;
+    flex-wrap: wrap;
 }
