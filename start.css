@@ -2,9 +2,9 @@
 body {
     margin: 0;
     height: 100vh;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     background-image: url('https://store-images.s-microsoft.com/image/apps.26407.13954220614155117.d8d9dbf1-2f5f-4da3-8fa3-31cb6a7b59e9.ecbea8ae-a49e-499c-9639-5fab2d39d4ce'); /* Replace with your image URL */
     background-size: cover;
     background-position: center;
@@ -37,8 +37,8 @@ body {
     transform: scale(1.05); 
     }
 
- .start-button:active {
+ /* .start-button:active {
         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         transform: scale(0.95); 
-        }   
+        }    */
 
