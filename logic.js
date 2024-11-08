@@ -101,13 +101,27 @@ function dragEnd(){
         let dimg = dropImg.src;
         currImg.src = dimg;
         dropImg.src = cimg;
+
+
+        let validmove = checkvalid();
+        if(!validmove){
+            let cimg = currImg.src;
+            let dimg = dropImg.src;
+            currImg.src = dimg;
+            dropImg.src = cimg;
+        }
+    
+    
+
+
+
+
     }
-    else{
-        // console.log("not");
+    // else{
+    //     console.log("not");
         
-    }
-
-
+    // }
+    
     
     
 
@@ -134,8 +148,10 @@ function crushThree() {
                 candy1.src = "./images/blank.png";
                 candy2.src = "./images/blank.png";
                 candy3.src = "./images/blank.png";
+
                 score += 30;
                 
+
             }
         }
     }
@@ -150,9 +166,37 @@ function crushThree() {
                 candy1.src = "./images/blank.png";
                 candy2.src = "./images/blank.png";
                 candy3.src = "./images/blank.png";
+
                     score += 30;
+
             }
         }
     }
 }
 
+function checkvalid(){
+     //check rows
+     for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < colums-2; c++) {
+            let candy1 = board[r][c];
+            let candy2 = board[r][c+1];
+            let candy3 = board[r][c+2];
+            if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")){
+                return true;
+            }
+        }
+    }
+
+    //check columns
+    for (let c = 0; c < colums; c++) {
+        for (let r = 0; r < rows-2; r++) {
+            let candy1 = board[r][c];
+            let candy2 = board[r+1][c];
+            let candy3 = board[r+2][c];
+            if (candy1.src == candy2.src && candy2.src == candy3.src && !candy1.src.includes("blank")) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
