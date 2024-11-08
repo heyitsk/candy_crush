@@ -78,13 +78,13 @@ function dragEnd(){
     let rStart = parseInt(imgStartCord[0])
     let cStart = parseInt(imgStartCord[1]);
     
-    console.log(rStart, cStart);
+    // console.log(rStart, cStart);
 
     let imgDropCord = dropImg.id.split("-"); //this is an array
     // console.log(imgCord);
     let rDrop = parseInt(imgDropCord[0]);
     let cDrop = parseInt(imgDropCord[1]);
-    console.log(rDrop, cDrop);
+    // console.log(rDrop, cDrop);
 
     //we have to restrict the movement to adjacent tiles only-> left right top bottom
 
@@ -95,12 +95,13 @@ function dragEnd(){
 
     let isAdjacent = moveRight || moveLeft || moveDown || moveUp
     if (isAdjacent){
-        console.log("is adjacent");
+        // console.log("is adjacent");
         
         let cimg = currImg.src;
         let dimg = dropImg.src;
         currImg.src = dimg;
         dropImg.src = cimg;
+
 
         let validmove = checkvalid();
         if(!validmove){
@@ -111,6 +112,8 @@ function dragEnd(){
         }
     
     
+
+
 
 
     }
@@ -127,11 +130,11 @@ function dragEnd(){
     
 }
 
-
+let score = parseInt(document.getElementById("score").innerText)
 function crushCandy(){
     crushThree();
 
-    document.getElementById("score").innerText= score;
+    document.getElementById("score").innerText= score
 }
 
 function crushThree() {
@@ -145,7 +148,10 @@ function crushThree() {
                 candy1.src = "./images/blank.png";
                 candy2.src = "./images/blank.png";
                 candy3.src = "./images/blank.png";
-                 score += 30;
+
+                score += 30;
+                
+
             }
         }
     }
@@ -160,7 +166,9 @@ function crushThree() {
                 candy1.src = "./images/blank.png";
                 candy2.src = "./images/blank.png";
                 candy3.src = "./images/blank.png";
-                     score += 30;
+
+                    score += 30;
+
             }
         }
     }
