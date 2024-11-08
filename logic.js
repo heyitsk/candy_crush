@@ -18,12 +18,13 @@ function gameStart(){
             randomImage.setAttribute("src",randomSrc)
             randomImage.setAttribute("id", i+"-"+j)
             board.append(randomImage)
-            
 
+            
         }
     }
     
 }
+
 
 
 
