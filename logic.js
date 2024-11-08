@@ -10,8 +10,8 @@ window.onload = () => {
 
     window.setInterval(function(){
         crushCandy();
-        // slideCandy();
-        // generateCandy();
+        slideCandy();
+        generateCandy();
     }, 100);
     
 }
@@ -243,3 +243,26 @@ function checkvalid(){
     }
     return false;
 }
+function slideCandy() {
+    for (let c = 0; c < colums; c++) {
+        let ind = rows - 1;
+        for (let r = colums-1; r >= 0; r--) {
+            if (!board[r][c].src.includes("blank")) {
+                board[ind][c].src = board[r][c].src;
+                ind -= 1;
+            }
+        }
+
+        for (let r = ind; r >= 0; r--) {
+            board[r][c].src = "./images/blank.png";
+        }
+    }
+}
+function generateCandy() {
+    for (let c = 0; c < colums;  c++) {
+        if (board[0][c].src.includes("blank")) {
+            board[0][c].src = "./images/" + images[Math.floor(Math.random() * 6)] + ".png";
+        }
+    }
+}
+
