@@ -132,6 +132,8 @@ function dragEnd(){
 
 let score = parseInt(document.getElementById("score").innerText)
 function crushCandy(){
+    
+    crushFour();
     crushThree();
 
     document.getElementById("score").innerText= score
@@ -168,6 +170,47 @@ function crushThree() {
                 candy3.src = "./images/blank.png";
 
                     score += 30;
+
+            }
+        }
+    }
+}
+
+function crushFour() {
+    //check rows
+    for (let r = 0; r < rows; r++) {
+        for (let c = 0; c < colums-3; c++) {
+            let candy1 = board[r][c];
+            let candy2 = board[r][c+1];
+            let candy3 = board[r][c+2];
+            let candy4 = board[r][c+3]
+            if (candy1.src == candy2.src && candy2.src == candy3.src && candy3.src==candy4.src && !candy1.src.includes("blank")){
+                candy1.src = "./images/blank.png";
+                candy2.src = "./images/blank.png";
+                candy3.src = "./images/blank.png";
+                candy4.src = "./images/blank.png";
+
+                score += 40;
+                
+
+            }
+        }
+    }
+
+    //check columns
+    for (let c = 0; c < colums; c++) {
+        for (let r = 0; r < rows-3; r++) {
+            let candy1 = board[r][c];
+            let candy2 = board[r+1][c];
+            let candy3 = board[r+2][c];
+            let candy4 = board[r+3][c];
+            if (candy1.src == candy2.src && candy2.src == candy3.src && candy3.src==candy4.src && !candy1.src.includes("blank")) {
+                candy1.src = "./images/blank.png";
+                candy2.src = "./images/blank.png";
+                candy3.src = "./images/blank.png";
+                candy4.src = "./images/blank.png";
+
+                    score += 40;
 
             }
         }
