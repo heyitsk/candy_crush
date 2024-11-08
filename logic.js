@@ -258,5 +258,11 @@ function slideCandy() {
         }
     }
 }
-
+function generateCandy() {
+    for (let c = 0; c < colums;  c++) {
+        if (board[0][c].src.includes("blank")) {
+            board[0][c].src = "./images/" + images[Math.floor(Math.random() * 6)] + ".png";
+        }
+    }
+}
 
