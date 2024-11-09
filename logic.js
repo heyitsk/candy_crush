@@ -12,10 +12,15 @@ window.onload = () => {
         crushCandy();
         slideCandy();
         generateCandy();
-    }, 100);
+    }, 0);
     
 }
 
+window.setTimeout(function(){
+    score = 0 ;
+}, 50);
+
+      
 function gameStart(){
     const tile = document.getElementById("game-container")
     for (i=0; i<rows; i++){
@@ -137,6 +142,7 @@ function crushCandy(){
     crushThree();
 
     document.getElementById("score").innerText= score
+    
 }
 
 function crushThree() {
