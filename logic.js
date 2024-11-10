@@ -18,7 +18,7 @@ window.onload = () => {
 
 window.setTimeout(function(){
     score = 0 ;
-}, 50);
+}, 100);
 
       
 function gameStart(){
@@ -272,3 +272,8 @@ function generateCandy() {
     }
 }
 
+
+
+
+
+//slidecandy
