@@ -18,7 +18,7 @@ window.onload = () => {
 
 window.setTimeout(function(){
     score = 0 ;
-}, 100);
+}, 150);
 
       
 function gameStart(){
