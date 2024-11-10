@@ -1,2 +1,2 @@
 # candy_crush
-# This is game development using html, css and javascript 
+# using HTML, CSS and JAVASCRIPT
