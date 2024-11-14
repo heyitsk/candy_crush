@@ -4,6 +4,7 @@ let images = ["Blue", "Green", "Orange", "Purple", "Red", "Yellow"]
 let currImg;
 let dropImg;
 let board= [];
+let remainingMoves=20;
 
 window.onload = () => {
     gameStart()
@@ -114,6 +115,12 @@ function dragEnd(){
             let dimg = dropImg.src;
             currImg.src = dimg;
             dropImg.src = cimg;
+        }
+        else{
+            remainingMoves--; 
+            document.getElementById("remaining-moves").innerText = remainingMoves; 
+            checkGameState(); 
+        
         }
     
     
@@ -271,9 +278,12 @@ function generateCandy() {
         }
     }
 }
-
-
-
-
-
-//slidecandy
+function checkGameState() {
+    if (remainingMoves <= 0) {
+        alert("Game Over! You've run out of moves.");
+        // Optionally, you can reset the game or navigate to a different screen
+    } else if (score >= 300) {
+        alert("Congratulations! You've won the game.");
+        // Optionally, you can reset the game or navigate to a different screen
+    }
+}
