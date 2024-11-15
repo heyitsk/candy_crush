@@ -1,0 +1,10 @@
+{
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/start.html",
+        "statusCode": 301
+      }
+    ]
+  }
+  
