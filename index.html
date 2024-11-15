@@ -5,16 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>candy crush</title>
     <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="score-container">
-        Score : <span id="score">0</span>
+    <div id="st">
+        <div id="score-container">Score : <span id="score">0</span></div>
+        <div id="moves">Moves Left : <span id="remaining-moves">20</span> </div>
+        <div id="target">Target Score : 100</div>
     </div>
-    <div>
-        <div id="moves-container">Moves Left : <span id="remaining-moves">20</span> 
-        <div id="target"> Target Score:300</div>  
-    </div>
+    
     <div id="game-container"></div>
+    <audio id="crushSoundThree" class="sound" src="sounds/candy_land4.wav"></audio>
+    <audio id="levelComplete" class="sound" src="sounds/level_completed.wav"></audio>
+    <audio id="crushSoundFour" class="sound" src="sounds/klubb_kross1.wav"></audio>
+
     <script src="logic.js"></script>
     <!-- <script src="logic2.js"></script> -->
 

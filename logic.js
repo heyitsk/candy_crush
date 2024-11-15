@@ -165,6 +165,7 @@ function crushThree() {
                 candy3.src = "./images/blank.png";
 
                 score += 30;
+                playCrushSoundThree()
                 
 
             }
@@ -183,6 +184,7 @@ function crushThree() {
                 candy3.src = "./images/blank.png";
 
                     score += 30;
+                    playCrushSoundThree()
 
             }
         }
@@ -204,6 +206,7 @@ function crushFour() {
                 candy4.src = "./images/blank.png";
 
                 score += 40;
+                playCrushSoundFour()
                 
 
             }
@@ -224,6 +227,7 @@ function crushFour() {
                 candy4.src = "./images/blank.png";
 
                     score += 40;
+                    playCrushSoundFour()
 
             }
         }
@@ -279,11 +283,27 @@ function generateCandy() {
     }
 }
 function checkGameState() {
-    if (remainingMoves <= 0) {
-        alert("Game Over! You've run out of moves.");
-        // Optionally, you can reset the game or navigate to a different screen
-    } else if (score >= 300) {
-        alert("Congratulations! You've won the game.");
-        // Optionally, you can reset the game or navigate to a different screen
-    }
+    if (score >= 300) {
+        showPopup("Congratulations! You won! Click to restart.");
+    } else if (remainingMoves === 0) {
+        if (score < 300) {
+            showPopup("Game Over! Try again.");
+        }
 }
+}
+
+function playCrushSoundThree() {
+    const crushSoundThree = document.getElementById('crushSoundThree');
+    crushSoundThree.play();
+}
+function levelComplete() {
+    const levelComplete = document.getElementById('levelComplete');
+    levelComplete.play();
+}
+function playCrushSoundFour() {
+    const crushSoundFour = document.getElementById('crushSoundFour');
+    crushSoundFour.play();
+}
+
+
+
