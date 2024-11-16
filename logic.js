@@ -284,10 +284,12 @@ function generateCandy() {
 }
 function checkGameState() {
     if (score >= 300) {
-        showPopup("Congratulations! You won! Click to restart.");
+        levelComplete()
+        alert("Congratulations You've Won the game")
+        
     } else if (remainingMoves === 0) {
         if (score < 300) {
-            showPopup("Game Over! Try again.");
+            alert("Game Over! Try again.");
         }
 }
 }
